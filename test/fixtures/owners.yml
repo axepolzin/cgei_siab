@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tax_city: MyString
+  tax_state: MyString
+  tax_zip: MyString
+  formatted_tax_address: MyString
+  tax_lat: 1.5
+  tax_long: 1.5
+
+two:
+  tax_city: MyString
+  tax_state: MyString
+  tax_zip: MyString
+  formatted_tax_address: MyString
+  tax_lat: 1.5
+  tax_long: 1.5

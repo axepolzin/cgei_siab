@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+<div>
+    <h2>ownership</h2>
+  <p><%= @rentratio %>% of lived-in properties are owner-occupied.</p></div>
+<div class="map" id="map"></div>
+
+<script>
+function initMap() {
+  var mapDiv = document.getElementById('map');
+
+
+  var map = new google.maps.Map(mapDiv, {
+    center: {lat: 41.772709, lng: -87.5889137},
+
+    zoom: 15
+  });
+
+  <% @rented.each do |lot| %>
+
+    var myLatLng = {lat: <%= lot.lat %>, lng: <%= lot.long %>};
+    var info = 'PIN: <%= lot.pin %> <%= lot.address_formatted %> Taxpayer: <%= lot.name %> <%= lot.formatted_tax_address %>';
+
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+      title: info,
+
+    });
+
+
+  <% end %>
+  <% @owned.each do |lot| %>
+
+    var myLatLng = {lat: <%= lot.lat %>, lng: <%= lot.long %>};
+    var info = 'PIN: <%= lot.pin %> <%= lot.address_formatted %> Taxpayer: <%= lot.name %> <%= lot.formatted_tax_address %>';
+
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+      title: info,
+
+    });
+
+  <% end %>
+}
+
+
+</script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+async defer></script>
+</div>
+
+<div>
+  <h3><img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png">Owner-occupied: <%= @owned.count %> properties</h3>
+
+  <h3><img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png">Renter-occupied: <%= @rented.count %> properties</h3>
+
+</div>
+</div>
+</body>

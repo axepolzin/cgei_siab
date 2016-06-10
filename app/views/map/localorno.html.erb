@@ -1,0 +1,66 @@
+<div>
+  <h2>rentflows</h2>
+<p><%= @percent_notlocal_zip %>% of landlords are based outside of the 60637 zip code.</p>
+<p><%= @percent_notlocal_chi %>% of landlords are based outside of Chicago.</p>
+
+</div>
+<div class="map" id="map"></div>
+
+<script>
+function initMap() {
+  var mapDiv = document.getElementById('map');
+
+
+  var map = new google.maps.Map(mapDiv, {
+    center: {lat: 41.772709, lng: -87.5889137},
+
+    zoom: 15
+  });
+
+  <% @local_zip.each do |lot| %>
+
+    var myLatLng = {lat: <%= lot.lat %>, lng: <%= lot.long %>};
+var info = 'PIN: <%= lot.pin %> <%= lot.address_formatted %> Taxpayer: <%= lot.name %> <%= lot.formatted_tax_address %>';
+
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+      title: info,
+
+    });
+
+
+  <% end %>
+  <% @notlocal_zip.each do |lot| %>
+
+    var myLatLng = {lat: <%= lot.lat %>, lng: <%= lot.long %>};
+var info = 'PIN: <%= lot.pin %> <%= lot.address_formatted %> Taxpayer: <%= lot.name %> <%= lot.formatted_tax_address %>';
+
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+      title: info,
+
+    });
+
+  <% end %>
+}
+
+
+</script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+async defer></script>
+
+<div>
+  <h3><img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png">Local ownership: <%= @local_zip.count %></h3>
+
+  <h3><img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png">Nonlocal ownership: <%= @notlocal_zip.count %></h3>
+
+</div>
+<p>Local: <%= @local_zip.count %></p>
+
+<p>Not local: <%= @notlocal_zip.count %></p>

@@ -1,0 +1,29 @@
+<div class="page-header">
+  <h2>speculation</h2>
+  <p>Property owners owning more than one property.</p>
+</div>
+
+
+
+<% @owners.each do |owner| %>
+<% if owner.properties.count > 1 then %>
+
+<dt><%= owner.formatted_tax_address %></dt>
+<dt>Number of Properties: <%= owner.properties.count %></dt>
+
+
+  <ul class="list-group">
+    <dt>Properties</dt>
+    <% owner.properties.each do |property| %>
+    <li class="list-group-item">
+      PIN: <%= property.pin %>
+      Property class: <%= property.property_class %>
+      Address: <%= property.address %>
+      Name: <%= property.name %>
+    </li>
+    <% end %>
+
+  </ul>
+  <% else %>
+  <% end %>
+<% end %>

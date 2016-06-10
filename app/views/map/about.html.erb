@@ -1,0 +1,46 @@
+<h2>about</h2>
+<p>This project attempts to study land ownership patterns on Chicago's South Side by examining publicly available property tax data.</p>
+
+
+<h3>definitions</h3>
+<div>
+<ul>Owner-occupied: Registered Tax Address = Property Address</ul>
+<ul>Speculation: Count of numbers associated with each tax address</ul>
+<ul>Local Ownership: Tax address within zip code</ul>
+<ul>Taxpayer:	Could refer to individual or corporate entity. Based off tax address because name values are unreliable.</ul>
+
+
+<h3>methodology</h3>
+<ul>1 Scraped Property Data from http://www.cookcountypropertyinfo.com/Pages/PIN-Results.aspx
+Using reference list Cook County GIS parcel data pins 2014.</ul>
+
+<ul>2 Standardized data using Google Maps API</ul>
+
+<ul>3 Mapped:	Occupancy and	Ownership Trends (Locality, Concentration)</ul>
+
+
+<h3>notes on the data</h3>
+<ul>1 2014 property pins available from https://datacatalog.cookcountyil.gov/GIS-Maps/ccgisdata-Lot-2014/2vjk-wpfr</ul>
+<ul>2 More up-to-date property info available from http://162.217.184.82/i2/default.aspx</ul>
+<br/>
+<p>For purposes of project limited to study of Hyde Park Township due to query limitations of the free version of Google Maps API</p>
+
+
+Data set: 2292 entries
+</p>
+
+<h3>next steps</h3>
+<h4>analysis</h4>
+	<ul>Add dimensions for custom geographic area</ul>
+<ul>Look at all of Chicago</ul>
+
+<h4>visualization</h4>
+	<ul>Use shapefile data to map lots</ul>
+
+
+<h5>data</h5>
+	<ul>Update with more recent data</ul>
+	<ul>Ownership currently includes all rental units in building – fix this</ul>
+	<ul>Create boolean filter based on name</ul>
+
+</p>

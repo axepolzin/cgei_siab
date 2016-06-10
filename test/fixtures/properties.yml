@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pin: 1
+  lat: 1.5
+  long: 1.5
+  address: MyString
+  address_number: 1
+  address_rose: MyString
+  address_street: MyString
+  address_suffix: MyString
+  address_formatted: MyString
+  city: MyString
+  township: MyString
+  zip: 1
+  property_class: MyString
+  name: MyString
+  tax_address: MyString
+  tax_street_number: MyString
+  tax_street_rose: MyString
+  tax_street_name: MyString
+  tax_street_suffix: MyString
+  tax_city: MyString
+  tax_state: MyString
+  tax_zip: 1
+  formatted_tax_address: 1
+  tax_lat: 1.5
+  tax_long: 1.5
+
+two:
+  pin: 1
+  lat: 1.5
+  long: 1.5
+  address: MyString
+  address_number: 1
+  address_rose: MyString
+  address_street: MyString
+  address_suffix: MyString
+  address_formatted: MyString
+  city: MyString
+  township: MyString
+  zip: 1
+  property_class: MyString
+  name: MyString
+  tax_address: MyString
+  tax_street_number: MyString
+  tax_street_rose: MyString
+  tax_street_name: MyString
+  tax_street_suffix: MyString
+  tax_city: MyString
+  tax_state: MyString
+  tax_zip: 1
+  formatted_tax_address: 1
+  tax_lat: 1.5
+  tax_long: 1.5
