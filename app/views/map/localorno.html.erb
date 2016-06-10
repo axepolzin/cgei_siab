@@ -12,7 +12,7 @@ function initMap() {
 
 
   var map = new google.maps.Map(mapDiv, {
-    center: {lat: 41.772709, lng: -87.5889137},
+    center: {lat: 41.773627, lng: -87.596001},
 
     zoom: 15
   });
@@ -61,6 +61,3 @@ async defer></script>
   <h3><img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png">Nonlocal ownership: <%= @notlocal_zip.count %></h3>
 
 </div>
-<p>Local: <%= @local_zip.count %></p>
-
-<p>Not local: <%= @notlocal_zip.count %></p>
